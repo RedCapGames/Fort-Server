@@ -28,10 +28,9 @@ function CheckUserAndAdd(requestBody, context, finalAction) {
                 query.find({
                     success: function (results) {
                         var userData = new UserData();
-
                         var result = results[0];
-                        var settings = result.get("Settings");
                         if(result != undefined){
+                            var settings = result.get("Settings");
                             var values={};
                             for(var i=0;i<settings.ValuesDefenition.length;i++){
                                 values[settings.ValuesDefenition[i]] = settings.StartupValues[settings.ValuesDefenition[i]];
